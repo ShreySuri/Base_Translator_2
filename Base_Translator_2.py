@@ -33,6 +33,7 @@ for i in range (0, base):
 
 length = list_len(num_original)
 i = 0
+new_num = 0
 
 # <base> items in acceptable_char_list
 # <length> items in num_original
@@ -113,6 +114,19 @@ if valid_string == True:
     for i in range (0, length):
         x = int(num_original[i])
         num_original[i] = x
+
+    place_val = length - 1
+
+    for i in range (0, length):
+        part = num_original[i] * base ** place_val
+        new_num = new_num + part
+        place_val = place_val - 1
+
+    print(new_num)
+
+else:
+    print("The string you entered contained digits not part of base %s. Please try again." % base)
+        
 
 
 
